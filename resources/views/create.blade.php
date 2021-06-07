@@ -20,7 +20,7 @@
                 <label for="exampleInputEmail1">Post Tags</label>
                 <select name="tags[]" id="" multiple>
                     @foreach($tags as $tag)
-                        <option value="{{$tag->id}}">{{$tag->name}}</option>
+                        <option value="{{ $tag->id }}" @if($post->tags->contains($tag->id)) selected @endif >{{$tag->name}}</option>
                     @endforeach
                 </select>
             </div>
